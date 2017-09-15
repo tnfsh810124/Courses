@@ -1,0 +1,34 @@
+%!TEX encoding = UTF-8 Unicode 
+
+\documentclass[12pt,fleqn]{article}
+\usepackage{CJKutf8}
+\usepackage[left=2cm,right=2cm,top=1.5cm,bottom=1.5cm]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{booktabs,longtable}
+\usepackage{float}
+\linespread{1.2}
+\DeclareMathOperator*{\doublesum}{\sum\sum}
+\DeclareMathOperator*{\triplesum}{\sum\sum\sum}
+\begin{CJK}{UTF8}{bsmi}
+\title{\textbf{Multivariate Analysis Homework 4}}
+\author{M052040003 鍾冠毅}
+
+\begin{document}
+\maketitle
+
+6.11.
+\begin{align*}
+L(\mu_{1}, \Sigma) &= (\frac{1}{2 \pi})^{- \frac{n_1 p}{2}} |\Sigma|^{-\frac{n_1}{2}}  \mathit{exp}\{ - \frac{1}{2} \mathit{tr}[\Sigma^{-1}(\sum_{j=1}^{n_1}(x_j-\bar{x}_1)(x_j-\bar{x}_1)' + n_1(\bar{x}_1-\mu_1)(\bar{x}_1-\mu_1)' )]\} \\
+L(\mu_{2}, \Sigma) &= (\frac{1}{2 \pi})^{- \frac{n_2 p}{2}}|\Sigma|^{-\frac{n_2}{2}}  \mathit{exp}\{ - \frac{1}{2} \mathit{tr}[\Sigma^{-1}(\sum_{j=1}^{n_2}(x_j-\bar{x}_2)(x_j-\bar{x}_2)' + n_2(\bar{x}_2-\mu_2)(\bar{x}_2-\mu_2)' )]\} \\
+L(\mu_{1},\mu_{2}, \Sigma) &= (\frac{1}{(2 \pi)^p}|\Sigma|)^{- \frac{(n_1+n_2)}{2}}  \mathit{exp}\{ - \frac{1}{2} \mathit{tr}[\Sigma^{-1}((n_1-1)S_1 + n_1(\bar{x}_1-\mu_1)(\bar{x}_1-\mu_1)'  \\
+& \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +  (n_2-1)S_2 + n_2(\bar{x}_2-\mu_2)(\bar{x}_2-\mu_2)' )]\} \\
+&= (\frac{1}{(2 \pi)^p}|\Sigma|)^{- \frac{(n_1+n_2)}{2}} \mathit{exp}\{ -\frac{1}{2}\mathit{tr}[\Sigma^{-1}((n_1-1)S_1 +(n_2-1)S_2)] \\
+& \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ -\frac{1}{2}\mathit{tr}[\Sigma^{-1}n_1(\bar{x}_1-\mu_1)(\bar{x}_1-\mu_1)'  +  \Sigma^{-1}n_2(\bar{x}_2-\mu_2)(\bar{x}_2-\mu_2)']  \} \\
+&= (\frac{1}{(2 \pi)^p}|\Sigma|)^{- \frac{(n_1+n_2)}{2}} \mathit{exp}\{  -\frac{1}{2}\mathit{tr}[\Sigma^{-1}((n_1-1)S_1 +(n_2-1)S_2)] \\
+& \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \   -\frac{1}{2}n_1(\bar{x}_1-\mu_1)'\Sigma^{-1}(\bar{x}_1-\mu_1)-\frac{1}{2}n_2(\bar{x}_2-\mu_2)'\Sigma^{-1}(\bar{x}_2-\mu_2)\}
+\end{align*}
+
+\end{CJK}
+\end{document} 
