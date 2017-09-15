@@ -1,0 +1,88 @@
+\documentclass[10pt]{article}
+\usepackage[usenames]{color} %used for font color
+\usepackage{amssymb} %maths
+\usepackage{amsmath} %maths
+\usepackage[utf8]{inputenc} %useful to type directly diacritic characters
+\begin{document}
+Like from part c, showing that the Ridge Regression estimate for $\beta$ is the mode and mean under this posterior distribution is the same thing as showing that the most likely value for $\beta$ is given by the lasso solution with a certain $\lambda$.\\
+\qquad We can do this by taking our likelihood and posterior and showing that it can be reduced to the canonical Ridge Regression Equation 6.5 from the book.We can take the logarithm of both sides to simplify it:
+\begin{align*}
+    &\log f(Y \mid X, \beta)p(\beta)\\
+   =&
+    \left(
+        \frac{
+            1
+        }{
+            \sigma \sqrt{2\pi}
+        }
+    \right)^n
+    \left(
+        \frac{
+            1
+        }{
+            \sqrt{
+                2c\pi
+            }
+        }
+    \right)^p
+    \exp
+    \left(
+        - \frac{
+            1
+        }{
+            2\sigma^2
+        }
+        \sum_{i = 1}^{n}
+        \left[
+            Y_i - (\beta_0 + \sum_{j = 1}^{p} \beta_j X_{ij})
+        \right]^2
+        - \frac{
+            1
+        }{
+            2c
+        }
+        \sum_{i = 1}^{p} \beta_i^2
+    \right)
+    \\
+    =&
+    \log
+    \left[
+        \left(
+            \frac{
+                1
+            }{
+                \sigma \sqrt{2\pi}
+            }
+        \right)^n
+        \left(
+            \frac{
+                1
+            }{
+                \sqrt{
+                    2c\pi
+                }
+            }
+        \right)^p
+    \right]
+    -
+    \left(
+        \frac{
+            1
+        }{
+            2\sigma^2
+        }
+        \sum_{i = 1}^{n}
+        \left[
+            Y_i - (\beta_0 + \sum_{j = 1}^{p} \beta_j X_{ij})
+        \right]^2
+        +
+        \frac{
+            1
+        }{
+            2c
+        }
+        \sum_{i = 1}^{p} \beta_i^2
+    \right)
+\end{align*}
+
+\end{document}

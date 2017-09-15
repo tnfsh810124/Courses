@@ -1,0 +1,81 @@
+\documentclass[10pt]{article}
+\usepackage[usenames]{color} %used for font color
+\usepackage{amssymb} %maths
+\usepackage{amsmath} %maths
+\usepackage[utf8]{inputenc} %useful to type directly diacritic characters
+\begin{document}
+The posterior with double exponential (Laplace Distribution) with mean $0$ and common scale parameter $b$, i.e.$p(\beta) = \frac{1}{2b}\exp(- \lvert \beta
+\rvert / b)$ is: 
+\begin{align*}
+f(\beta \mid X, Y)
+    &\propto f(Y \mid X, \beta) p(\beta \mid X) = f(Y \mid X, \beta) p(\beta)\\
+    &
+\end{align*}
+\begin{align*}
+    f(Y \mid X, \beta)p(\beta)
+    &=
+    \left(
+        \frac{
+            1
+        }{
+            \sigma \sqrt{2\pi}
+        }
+    \right)^n
+    \exp
+    \left(
+        - \frac{
+            1
+        }{
+            2\sigma^2
+        }
+        \sum_{i = 1}^{n}
+        \left[
+            Y_i - (\beta_0 + \sum_{j = 1}^{p} \beta_j X_{ij})
+        \right]^2
+    \right)
+    \left(
+        \frac{
+            1
+        }{
+            2b
+        }
+        \exp(- \lvert \beta \rvert / b)
+    \right)
+    \\
+    &=
+    \left(
+        \frac{
+            1
+        }{
+            \sigma \sqrt{2\pi}
+        }
+    \right)^n
+    \left(
+        \frac{
+            1
+        }{
+            2b
+        }
+    \right)
+    \exp
+    \left(
+        - \frac{
+            1
+        }{
+            2\sigma^2
+        }
+        \sum_{i = 1}^{n}
+        \left[
+            Y_i - (\beta_0 + \sum_{j = 1}^{p} \beta_j X_{ij})
+        \right]^2
+        -
+        \frac{
+            \lvert \beta \rvert
+        }{
+            b
+            }
+    \right)
+\end{align*}
+
+
+\end{document}

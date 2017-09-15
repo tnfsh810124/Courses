@@ -1,0 +1,47 @@
+\documentclass[10pt]{article}
+\usepackage[usenames]{color} %used for font color
+\usepackage{amssymb} %maths
+\usepackage{amsmath} %maths
+\usepackage[utf8]{inputenc} %useful to type directly diacritic characters
+\begin{document}
+\[\begin{aligned}
+     L(\theta \mid \beta)
+    &= \prod_{i = 1}^{n}
+    \frac{
+        1
+    }{
+        \sigma \sqrt{2\pi}
+    }
+    \exp
+    \left(-
+        \frac{
+            Y_i - (\beta_0 + \sum_{j = 1}^{p} \beta_j X_{ij})
+        }{
+            2\sigma^2
+        }
+    \right)
+    \\
+    &=
+    \left(
+        \frac{
+            1
+        }{
+            \sigma \sqrt{2\pi}
+        }
+    \right)^n
+    \exp
+    \left(
+        - \frac{
+            1
+        }{
+            2\sigma^2
+        }
+        \sum_{i = 1}^{n}
+        \left[
+            Y_i - (\beta_0 + \sum_{j = 1}^{p} \beta_j X_{ij})
+        \right]^2
+    \right)
+\end{aligned}
+
+\]
+\end{document}

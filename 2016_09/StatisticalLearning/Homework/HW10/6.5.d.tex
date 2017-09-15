@@ -1,0 +1,8 @@
+\documentclass[10pt]{article}
+\usepackage[usenames]{color} %used for font color
+\usepackage{amssymb} %maths
+\usepackage{amsmath} %maths
+\usepackage[utf8]{inputenc} %useful to type directly diacritic characters
+\begin{document}
+Under the condition that $| \hat{\beta}_1 | + | \hat{\beta}_2 | < s$, the restriction area can be drawn as a diamond centered at $(0, 0)$. Consider the squared optimization constraint $(y_1 - \hat{\beta}_1x_{11} - \hat{\beta}_2x_{12})^2 + (y_2 - \hat{\beta}_1x_{21} - \hat{\beta}_2x_{22})^2$ and known conditions $x_{11} = x_{12}$, $x_{21} = x_{22}$, $x_{11} + x_{21}=0$, $x_{12} + x_{22}=0$ and $y_1 + y_2 = 0$. We simplify it to $min\{2(y_1 - (\hat{\beta}_1 + \hat{\beta}_2)x_{11})^2\}$ and conclude that $\hat{\beta}_1 + \hat{\beta}_2 = \frac{y_1}{x_{11}}$ which is a line parallel to $\hat{\beta}_1 + \hat{\beta}_2 = s$. By the method of linear programming we learned in high school mathematics, $\hat{\beta}_1 + \hat{\beta}_2 = s$ is a potential solution to Lasso optimization problem. Similarly, $\hat{\beta}_1 + \hat{\beta}_2 = -s$ can be discussed. Thus, the general form of solution is given by two line segment: $\hat{\beta}_1 + \hat{\beta}_2 = s; \hat{\beta}_1 \geq 0$; $\hat{\beta}_2 \geq 0$ and $\hat{\beta}_1 + \hat{\beta}_2 = -s; \hat{\beta}_1 \leq 0$; $\hat{\beta}_2 \leq 0$.
+\end{document}

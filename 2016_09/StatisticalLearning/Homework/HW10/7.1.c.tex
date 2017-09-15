@@ -1,0 +1,17 @@
+\documentclass[10pt]{article}
+\usepackage[usenames]{color} %used for font color
+\usepackage{amssymb} %maths
+\usepackage{amsmath} %maths
+\usepackage[utf8]{inputenc} %useful to type directly diacritic characters
+\begin{document}
+\begin{align*}&f_1(\xi) = \beta_0 + \beta_1 \xi + \beta_2 \xi^2 + \beta_3 \xi^3
+\\
+&f_2(\xi) = (\beta_0 - \beta_4 \xi^3) + (\beta_1 + 3 \beta_4 \xi^2) \xi + (\beta_2 - 3 \beta_4 \xi) \xi^2 + (\beta_3 + \beta_4) \xi^3
+\\
+= &\beta_0 - \beta_4 \xi^3 + \beta_1 \xi + 3 \beta_4 \xi^3 + \beta_2 \xi^2 - 3 \beta_4 \xi^3 + \beta_3 \xi^3 + \beta_4 \xi^3
+\\
+= &\beta_0 + \beta_1 \xi + \beta_2 \xi^2 + 3 \beta_4 \xi^3 - 3 \beta_4 \xi^3 + \beta_3 \xi^3 + \beta_4 \xi^3 - \beta_4 \xi^3
+\\
+= &\beta_0 + \beta_1 \xi + \beta_2 \xi^2 + \beta_3 \xi^3
+\end{align*}
+\end{document}

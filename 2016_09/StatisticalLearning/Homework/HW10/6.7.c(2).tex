@@ -1,0 +1,135 @@
+\documentclass[10pt]{article}
+\usepackage[usenames]{color} %used for font color
+\usepackage{amssymb} %maths
+\usepackage{amsmath} %maths
+\usepackage[utf8]{inputenc} %useful to type directly diacritic characters
+\begin{document}
+\qquad We want to maximize the posterior, this means:
+\begin{align*}
+    &\arg\max_\beta \, f(\beta \mid X, Y)\\
+    \propto &
+    \arg\max_\beta
+    \,
+    \log
+    \left[
+        \left(
+            \frac{
+                1
+            }{
+                \sigma \sqrt{2\pi}
+            }
+        \right)^n
+        \left(
+            \frac{
+                1
+            }{
+                2b
+            }
+        \right)
+    \right]
+    -
+    \left(
+        \frac{
+            1
+        }{
+            2\sigma^2
+        }
+        \sum_{i = 1}^{n}
+        \left[
+            Y_i - (\beta_0 + \sum_{j = 1}^{p} \beta_j X_{ij})
+        \right]^2
+        +
+        \frac{
+            \lvert \beta \rvert
+        }{
+            b
+            }
+    \right)
+    \\
+\end{align*}
+\qquad Since we are taking the difference of two values, the maximum of this value is the equivalent to taking the difference of the second value in terms of $\beta$. This results in:
+\begin{align*}
+    &=
+    \arg\min_\beta
+    \,
+    \frac{
+        1
+    }{
+        2\sigma^2
+    }
+    \sum_{i = 1}^{n}
+    \left[
+        Y_i - (\beta_0 + \sum_{j = 1}^{p} \beta_j X_{ij})
+    \right]^2
+    +
+    \frac{
+        \lvert \beta \rvert
+    }{
+        b
+    }
+    \\
+    &=
+    \arg\min_\beta
+    \,
+    \frac{
+        1
+    }{
+        2\sigma^2
+    }
+    \sum_{i = 1}^{n}
+    \left[
+        Y_i - (\beta_0 + \sum_{j = 1}^{p} \beta_j X_{ij})
+    \right]^2
+    +
+    \frac{
+        1
+    }{
+        b
+    }
+    \sum_{j = 1}^{p} \lvert \beta_j \rvert
+    \\
+    &=
+    \arg\min_\beta
+    \,
+    \frac{
+        1
+    }{
+        2\sigma^2
+    }
+    \left(
+        \sum_{i = 1}^{n}
+        \left[
+            Y_i - (\beta_0 + \sum_{j = 1}^{p} \beta_j X_{ij})
+        \right]^2
+        +
+        \frac{
+            2\sigma^2
+        }{
+            b
+        }
+        \sum_{j = 1}^{p} \lvert \beta_j \rvert
+    \right)
+\end{align*}
+\qquad By letting $\lambda = 2\sigma^2/b$, we can see that we end up with:
+\begin{align*}
+    &=
+    \arg\min_\beta
+    \,
+    \sum_{i = 1}^{n}
+    \left[
+        Y_i - (\beta_0 + \sum_{j = 1}^{p} \beta_j X_{ij})
+    \right]^2
+    +
+    \lambda
+    \sum_{j = 1}^{p} \lvert \beta_j \rvert
+    \\
+    &=
+    \arg\min_\beta
+    \,
+    \text{RSS}
+    +
+    \lambda
+    \sum_{j = 1}^{p} \lvert \beta_j \rvert
+\end{align*}
+\qquad That is what we know is the Lasso from Equation 6.7 in the book. Thus we know that when the posterior comes from a Laplace distribution with mean zero and common scale parameter $b$, the mode for $\beta$ is given by the Lasso solution when $\lambda = 2\sigma^2 / b$. 
+\end{document}

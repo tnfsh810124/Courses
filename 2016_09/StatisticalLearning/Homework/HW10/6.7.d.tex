@@ -1,0 +1,128 @@
+\documentclass[10pt]{article}
+\usepackage[usenames]{color} %used for font color
+\usepackage{amssymb} %maths
+\usepackage{amsmath} %maths
+\usepackage[utf8]{inputenc} %useful to type directly diacritic characters
+\begin{document}
+The posterior distributed according to Normal distribution with mean 0 and variance   $c$ is:
+\begin{align*}
+    f(\beta \mid X, Y)
+    \propto f(Y \mid X, \beta) p(\beta \mid X)
+    = f(Y \mid X, \beta) p(\beta)
+\end{align*}
+\qquad Our probability distribution function then becomes:
+$p(\beta)
+        = \prod_{i = 1}^{p} p(\beta_i)
+        = \prod_{i = 1}^{p}
+        \frac{
+            1
+        }{
+            \sqrt{
+                2c\pi
+            }
+        }
+        \exp \left(
+            - \frac{
+                \beta_i^2
+                }{
+                    2c
+                }
+        \right)
+        = \left(
+            \frac{
+                1
+            }{
+                \sqrt{
+                    2c\pi
+                }
+            }
+        \right)^p
+        \exp \left(
+            - \frac{
+                1
+            }{
+                2c
+            }
+            \sum_{i = 1}^{p} \beta_i^2
+        \right)$. Substituting our values from (a) and our density function gives us:
+\begin{align*}
+    &f(Y \mid X, \beta)p(\beta)\\
+   =&
+    \left(
+        \frac{
+            1
+        }{
+            \sigma \sqrt{2\pi}
+        }
+    \right)^n
+    \exp
+    \left(
+        - \frac{
+            1
+        }{
+            2\sigma^2
+        }
+        \sum_{i = 1}^{n}
+        \left[
+            Y_i - (\beta_0 + \sum_{j = 1}^{p} \beta_j X_{ij})
+        \right]^2
+    \right)
+    \left(
+        \frac{
+            1
+        }{
+            \sqrt{
+                2c\pi
+            }
+        }
+    \right)^p
+    \exp \left(
+        - \frac{
+            1
+        }{
+            2c
+        }
+        \sum_{i = 1}^{p} \beta_i^2
+    \right)
+    \\
+   =&
+    \left(
+        \frac{
+            1
+        }{
+            \sigma \sqrt{2\pi}
+        }
+    \right)^n
+    \left(
+        \frac{
+            1
+        }{
+            \sqrt{
+                2c\pi
+            }
+        }
+    \right)^p
+    \exp
+    \left(
+        - \frac{
+            1
+        }{
+            2\sigma^2
+        }
+        \sum_{i = 1}^{n}
+        \left[
+            Y_i - (\beta_0 + \sum_{j = 1}^{p} \beta_j X_{ij})
+        \right]^2
+        - \frac{
+            1
+        }{
+            2c
+        }
+        \sum_{i = 1}^{p} \beta_i^2
+    \right)
+\end{align*}
+
+
+
+
+\end{document}

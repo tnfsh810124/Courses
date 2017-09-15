@@ -1,0 +1,16 @@
+\documentclass[10pt]{article}
+\usepackage[usenames]{color} %used for font color
+\usepackage{amssymb} %maths
+\usepackage{amsmath} %maths
+\usepackage[utf8]{inputenc} %useful to type directly diacritic characters
+\begin{document}
+$\forall x > \xi$, $f(x)$ has the form of:
+\begin{align*}
+&\beta_0 + \beta_1 x + \beta_2 x^2 + \beta_3 x^3 + \beta_4 (x - \xi)^3
+\\
+= &\beta_0 + \beta_1 x + \beta_2 x^2 + \beta_3 x^3 + \beta_4 (x^3 - 3 x^2 \xi + 3 x \xi^2 - \xi^3)
+\\
+= &(\beta_0 - \beta_4 \xi^3) + (\beta_1 + 3 \beta_4 \xi^2) x + (\beta_2 - 3 \beta_4 \xi) x^2 + (\beta_3 + \beta_4) x^3
+\end{align*}
+\qquad Thus, $a_2 = \beta_0 - \beta_4 \xi^3$, $b_2 = \beta_1 + 3 \beta_4 \xi^2$, $c_2 = \beta_2 - 3 \beta_4 \xi$, $d_2 = \beta_3 + \beta_4$
+\end{document}
